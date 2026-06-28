@@ -1,0 +1,41 @@
+# TurboDrive
+
+A fast, lightweight command-line tool to upload large files to Google Drive without browser slowdowns. It splits files into chunks and tracks progress in a local database so uploads can automatically resume if your internet drops.
+
+## Features
+
+* Resumable Uploads: If the network fails mid-upload, the script picks up right where it left off instead of restarting from 0%.
+* Zero-RAM Chunking: Streams files from your drive in 8MB chunks without loading the entire file into system memory.
+* No UI Bottlenecks: Runs entirely in the terminal, bypassing browser main-thread lag and background tab throttling.
+
+## Project Structure
+
+* main.py — The entry point for the CLI application.
+* uploader.py — Handles the async HTTP PUT requests to Google's Resumable Upload API.
+* chunker.py — Slices massive files into uniform blocks using byte offsets.
+* database.py — SQLite integration to keep track of completed and pending chunks.
+* auth.py — Manages Google OAuth2 tokens and session credentials.
+* config.py — Central location for chunk sizes, timeouts, and API endpoints.
+
+## Performance Benchmark
+
+Tested against the standard Google Drive web interface using a 910.34 MB file:
+
+* Total Duration: 386.14 seconds (~6.4 minutes)
+* Average Speed: 2.36 MB/s
+* Reliability: Successfully recovered from manual network disconnections during testing without losing progress.
+
+## Setup & Installation
+
+1. Clone the repository:
+   git clone https://github.com/YOUR_USERNAME/TurboDrive.git
+   cd TurboDrive
+
+2. Install dependencies:
+   pip install aiohttp
+
+3. Add API Credentials:
+   Place your Google OAuth credentials.json file in the root directory.
+
+4. Run the tool:
+   python main.py /path/to/your/large/file.mkv
