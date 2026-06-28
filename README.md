@@ -28,7 +28,7 @@ Tested against the standard Google Drive web interface using a 910.34 MB file:
 ## Setup & Installation
 
 1. Clone the repository:
-   git clone https://github.com/YOUR_USERNAME/TurboDrive.git
+   git clone https://github.com/mParthSaharanf/TurboDrive.git
    cd TurboDrive
 
 2. Install dependencies:
