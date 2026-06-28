@@ -1,0 +1,17 @@
+# Ignore python virtual environments
+.venv/
+__pycache__/
+*.pyc
+
+# Ignore private Google API credentials and tokens
+credentials.json
+token.json
+
+# Ignore local SQLite database tracking states
+*.db
+turbodrive_state.db
+
+# Block video files from being tracked
+*.mkv
+*.mp4
+*.avi
