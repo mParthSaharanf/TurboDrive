@@ -8,15 +8,6 @@ A fast, lightweight command-line tool to upload large files to Google Drive with
 * Zero-RAM Chunking: Streams files from your drive in 8MB chunks without loading the entire file into system memory.
 * No UI Bottlenecks: Runs entirely in the terminal, bypassing browser main-thread lag and background tab throttling.
 
-## Project Structure
-
-* main.py — The entry point for the CLI application.
-* uploader.py — Handles the async HTTP PUT requests to Google's Resumable Upload API.
-* chunker.py — Slices massive files into uniform blocks using byte offsets.
-* database.py — SQLite integration to keep track of completed and pending chunks.
-* auth.py — Manages Google OAuth2 tokens and session credentials.
-* config.py — Central location for chunk sizes, timeouts, and API endpoints.
-
 ## Performance Benchmark
 
 Tested against the standard Google Drive web interface using a 910.34 MB file:
