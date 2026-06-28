@@ -18,15 +18,21 @@ Tested against the standard Google Drive web interface using a 910.34 MB file:
 
 ## Setup & Installation
 
-1. **Clone the repository:**
+**Clone the repository:**
+   ```
    git clone https://github.com/YOUR_USERNAME/TurboDrive.git
+   
    cd TurboDrive
+   ```
 
-2. **Install dependencies:**
+**Install dependencies:**
+   ```
    pip install aiohttp
-
-3. **Add API Credentials:**
+   ```
+**Add API Credentials:**
    Place your Google OAuth credentials.json file in the root directory.
 
-4. **Run the tool:**
+**Run the tool:**
+   ```
    python main.py /path/to/your/large/file.mkv
+   ```
